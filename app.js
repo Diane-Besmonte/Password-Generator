@@ -21,9 +21,21 @@ function randomPass() {
         // console.log(random); //test if the random generator works
         generateRandom.push(random);
       }
-
       return generateRandom.toString().replace(/,/g, "");
 };
+
+// Input number value exceeds notification
+  charLength.addEventListener('blur', (event) => {
+    const number = Math.floor(event.target.value)
+  
+    if (number >= 8 && number <= 16) {
+      passwordLength = number;
+    } else {
+      alert("Password length must be between 8 and 16 characters.")
+    }
+
+    event.target.value = passwordLength
+  });
 
 // Passing the random generated passwords to password fields.
 generateBtn.addEventListener('click', function() {
@@ -38,8 +50,8 @@ generateBtn.addEventListener('click', function() {
     }
 
 randomPass();
-// console.log(randomPass());
 
+// Copy text to clipboard
 function copyPass(copyText)
   {
     navigator.clipboard.writeText(copyText);
@@ -53,8 +65,5 @@ function copyPass(copyText)
         // alert("Password Copied!");
         copiedText.style.display = "none";
     }, "1000");
-
-
-    
 
   }
