@@ -8,6 +8,8 @@ let passOne = document.getElementById("passOne");
 let passTwo = document.getElementById("passTwo");
 let passThree = document.getElementById("passThree");
 let passFour = document.getElementById("passFour");
+let passwordBtn = document.getElementsByClassName("password-btn");
+let copiedText = document.getElementById("copied");
 
 // Generates random password based on user input.
 function randomPass() {
@@ -25,8 +27,8 @@ function randomPass() {
 
 // Passing the random generated passwords to password fields.
 generateBtn.addEventListener('click', function() {
-    passwordSets();}
-    );
+    passwordSets();
+});
 
     function passwordSets() {
         passOne.textContent = `${randomPass()}`;
@@ -40,5 +42,19 @@ randomPass();
 
 function copyPass(copyText)
   {
-      navigator.clipboard.writeText(copyText);
+    navigator.clipboard.writeText(copyText);
+
+    setTimeout(() => {
+        // alert("Password Copied!");
+        copiedText.style.display = "block";
+    }, "500");
+
+    setTimeout(() => {
+        // alert("Password Copied!");
+        copiedText.style.display = "none";
+    }, "1000");
+
+
+    
+
   }

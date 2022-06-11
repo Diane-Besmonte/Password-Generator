@@ -56,6 +56,22 @@ h1, p {
     margin: 10px 0;
 }
 
+#copied {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 1.5em;
+    align-self: center; 
+    padding: 8px;
+    border-radius: 0.4em;
+    font-family: var(--prgph);
+    border: 2px solid var(--green);
+    background-color: var(--dark-blue);
+    color: var(--white);
+    display: none;
+}
+
 #passwordInput {
     display: flex;
     gap: 10px;
@@ -153,6 +169,10 @@ label {
     }
     
     p {
+        font-size: 1.2em;
+    }
+
+    #copied {
         font-size: 1.2em;
     }
     
